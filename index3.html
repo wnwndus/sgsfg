@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FoodLink</title>
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="styles01.css">
+    <link rel="stylesheet" href="styles02.css">
+</head>
+<body>
+    <div id="navbar">
+        <div class="logo">
+            <span>푸드링크</span>
+        </div>
+        <div id="address-input">
+            <input type="text" placeholder="배달 주소를 입력하세요">
+            <button>검색</button>
+        </div>
+        <div class="slogan">
+            <span>맛집을 한 단계 가까이, 푸드링크</span>
+        </div>
+        <div class="user-buttons">
+            <button id="loginButton">로그인</button>
+            <button id="signupButton">회원가입</button>
+        </div>
+    </div>
+
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="음식이나 가게를 검색하세요">
+        <button id="search-button">검색</button>
+    </div>
+
+    <div id="food-categories">
+        <div class="category-card">
+            <img src="분식.jpg" alt="">
+            <a href="https://www.yogiyo.co.kr/mobile/#/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C/000000/%EB%B6%84%EC%8B%9D/"> 분식 🍱</a>
+        </div>
+        <div class="category-card">
+            <img src="야식.jpg" alt="">
+            <a href="https://www.yogiyo.co.kr/mobile/#/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C/000000/%EC%B9%98%ED%82%A8/"> 야식 🍗</a>
+        </div>
+        <div class="category-card">
+            <img src="패스트푸드.jpg" alt="">
+            <a href="https://www.yogiyo.co.kr/mobile/#/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C/000000/%ED%94%84%EB%9E%9C%EC%B0%A8%EC%9D%B4%EC%A6%88/"> 패스트푸드 🍔</a>
+        </div>
+        <div class="category-card">
+            <img src="양식.jpg" alt="">
+            <a href="https://www.yogiyo.co.kr/mobile/#/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C/000000/%ED%94%BC%EC%9E%90%EC%96%91%EC%8B%9D/"> 양식 🍝</a>
+        </div>
+        <div class="category-card">
+            <img src="일식.jpg" alt="">
+            <a href="https://www.yogiyo.co.kr/mobile/#/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C/000000/%EC%9D%BC%EC%8B%9D/"> 일식 🍣</a>
+        </div>
+        <div class="category-card">
+            <img src="중식.jpg" alt="">
+            <a href="https://www.yogiyo.co.kr/mobile/#/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C/000000/%EC%A4%91%EC%8B%9D/"> 중식 🥡</a>
+        </div>
+        <div class="category-card">
+            <img src="한식.jpg" alt="">
+            <a href="https://www.yogiyo.co.kr/mobile/#/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C/000000/%ED%95%9C%EC%8B%9D/"> 한식 🍚</a>
+        </div>
+        <div class="category-card">
+            <img src="치킨.jpg" alt="">
+            <a href="https://www.yogiyo.co.kr/mobile/#/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C/000000/%EC%B9%98%ED%82%A8/"> 치킨 🍗</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="login-form">
+            <h2>로그인</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">아이디:</label>
+                    <input type="text" id="username" name="username" placeholder="아이디를 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호:</label>
+                    <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요">
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="login-btn">로그인</button>
+                </div>
+                <div class="form-group link">
+                    <a href="findid03.html">아이디 찾기</a>
+                    <a href="findpw04.html">비밀번호 찾기</a>
+                    <a href="signup02.html">회원 가입</a>
+                </div>
+            </form>
+        </div>
+        <h2>푸드링크 회원가입</h2>
+        <form action="homepage21.html" method="post">
+            <div class="form-group">
+                <label for="id">아이디:</label>
+                <input type="text" id="id" name="id" required>
+                <span id="id-error" style="color: red;"></span>
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="checkDuplicate()">중복 확인</button>
+            </div>
+            <div class="form-group">
+                <label for="email">이메일:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">전화번호:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <button type="button" onclick="sendVerificationCode()">인증번호 전송</button>
+                <span id="timer" class="timer"></span>
+            </div>
+            <div class="form-group">
+                <label for="verification-code">인증번호:</label>
+                <input type="text" id="verification-code" name="verification-code" required>
+            </div>
+            <div class="form-group">
+                <label for="address">주소:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label>성별:</label>
+                <input type="radio" id="gender-male" name="gender" value="male" checked>
+                <label for="gender-male">남성</label>
+                <input type="radio" id="gender-female" name="gender" value="female">
+                <label for="gender-female">여성</label>
+            </div>
+            <div class="form-group">
+                <label for="birthdate">생년월일:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+            <input type="submit" value="가입하기">
+        </form>
+    </div>
+
+    <script>
+        const loginBtn = document.getElementById('login-btn');
+        loginBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+
+            if (usernameInput.value.trim() === '' || passwordInput.value.trim() === '') {
+                alert('아이디와 비밀번호를 입력하세요.');
+            } else {
+                window.location.href = 'homepage21.html';
+            }
+        });
+
+        function checkDuplicate() {
+            // 아이디 중복 확인 로직 구현
+            // 중복되는 아이디인 경우
+            document.getElementById('id-error').textContent = '이미 사용 중인 아이디입니다.';
+            // 중복되지 않는 아이디인 경우
+            // document.getElementById('id-error').textContent = ' 사용이 가능한 아이디입니다.';
+        }
+
+        function sendVerificationCode() {
+            // 전화번호 인증번호 전송 로직 구현
+            alert('인증번호 발송!');
+            startTimer();
+        }
+
+        function startTimer() {
+            var duration = 180; // 3 minutes in seconds
+            var timerElement = document.getElementById('timer');
+
+            var interval = setInterval(function () {
+                var minutes = Math.floor(duration / 60);
+                var seconds = duration % 60;
+
+                // Add leading zero if needed
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                timerElement.textContent = minutes + ':' + seconds;
+
+                if (duration <= 0) {
+                    clearInterval(interval);
+                    timerElement.textContent = '';
+                }
+
+                duration--;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
